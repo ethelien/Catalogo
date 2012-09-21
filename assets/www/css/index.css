@@ -1,0 +1,170 @@
+html{
+	width: 100%;
+	height:100%; /* gives layout 100% height */
+	overflow:inherit; /* triggers 100% height in Opera 9.5 */
+	background: #4c4c4c; /* Old browsers */
+	background: -moz-linear-gradient(top,  #4c4c4c 0%, #666666 10%, #595959 12%, #474747 12%, #2c2c2c 15%, #000000 29%, #111111 73%, #1c1c1c 91%, #2b2b2b 100%, #131313 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(10%,#666666), color-stop(12%,#595959), color-stop(12%,#474747), color-stop(15%,#2c2c2c), color-stop(29%,#000000), color-stop(73%,#111111), color-stop(91%,#1c1c1c), color-stop(100%,#2b2b2b), color-stop(100%,#131313)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #4c4c4c 0%,#666666 10%,#595959 12%,#474747 12%,#2c2c2c 15%,#000000 29%,#111111 73%,#1c1c1c 91%,#2b2b2b 100%,#131313 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #4c4c4c 0%,#666666 10%,#595959 12%,#474747 12%,#2c2c2c 15%,#000000 29%,#111111 73%,#1c1c1c 91%,#2b2b2b 100%,#131313 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #4c4c4c 0%,#666666 10%,#595959 12%,#474747 12%,#2c2c2c 15%,#000000 29%,#111111 73%,#1c1c1c 91%,#2b2b2b 100%,#131313 100%); /* IE10+ */
+	background: linear-gradient(top,  #4c4c4c 0%,#666666 10%,#595959 12%,#474747 12%,#2c2c2c 15%,#000000 29%,#111111 73%,#1c1c1c 91%,#2b2b2b 100%,#131313 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#base {
+	position:absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#Busqueda {
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+    width: 100%;
+}
+
+#Busqueda img {
+	border-radius: 6px;
+	background-image:url("../img/spirtebandnessmovil_Busqueda.png");
+	border:1px solid #B0B0B0;
+	width:50px;
+	height:50px;
+}
+
+#Estilos{
+	background-position: -311px -29px;
+}
+
+#Estilos:hover{
+	background-position: -311px -102px;
+}
+
+#Ciudades{
+	background-position: -389px -29px;
+}
+
+#Ciudades:hover{
+	background-position: -389px -102px;
+}
+
+#Cercania{
+	background-position: -467px -29px;
+}
+
+#Cercania:hover{
+	background-position: -467px -102px;
+}
+
+
+#resul,  #resul2, #formularioEstilo, #formularioCiudades, #formularioCercania {
+	position: absolute;
+	top: 125px;
+    background-color: #E0E0E0;
+    height: 73%;
+    width: 100%;
+}
+
+#eventos {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    table-layout: fixed;
+}
+
+#eventos td{
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+#tabla {
+    position: absolute;
+    left: 10%;
+    top: 5%;
+    width: 80%;
+    table-layout: fixed;
+}
+
+#tabla td{
+	text-align: left;	
+}
+
+#Estilo1, #Estilo2, #Estilo3, #Ciudad{
+	background-color:#FFFFFF; 
+	border-radius: 5px; 
+	border:1px solid #B0B0B0;
+	color:black;
+    width: 100%;
+}
+
+#Dale_caña{
+	color: white;
+	margin-top: 30px;
+	background-color: #404448;
+	border-radius: 5px;
+    display: block;
+    font-size: large;
+    font-family: Tahoma;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;  
+}
+
+#zona {
+    position: absolute;    
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 100;
+}
+
+#zona input {
+	font-size: small;
+    background-color: #404448;
+    border: 2px gray outset;
+    color: white;
+    float: left;
+    width:50%; 
+    height:100%;
+}
+
+
+#Entrada_Bandness{
+    background-image:url("../img/spirtebandnessmovil_40.png");
+	background-repeat: no-repeat;
+	background-position: -30px -250px;
+}
+
+
+h1 {
+    color: white;
+    display: inline-block;
+    font-family: Tahoma;
+    font-size: medium;
+    font-weight: bolder;
+	height:20px;    
+}
+
+h2 {
+    color: white;
+    font-family: Tahoma;
+    font-size: small;
+    font-weight:normal;
+    margin-top:0px;
+}
+
+img{
+	border:2px solid #B0B0B0;
+}
