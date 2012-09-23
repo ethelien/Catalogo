@@ -28,53 +28,44 @@
 		$("body").fadeIn('slow');	
     }
     
-	function mostrarEstilos() {
+    
+    function addNewRow()
+    {
+      // obtenemos acceso a la tabla por su ID
+      var TABLE = document.getElementById("bandas");
+      // obtenemos acceso a la fila maestra por su ID
+      var TROW = document.getElementById("fila");
+      // tomamos la celda
+      var content = TROW.getElementsByTagName("td");
+      // creamos una nueva fila
+      var newRow = TABLE.insertRow(-1);
+      newRow.className = TROW.attributes['class'].value;
+      
+      if(par=='1'){
+      	newRow.style.background = "#D0D0D0";
+      	par--;
+      }
+      
+      else
+      	par++;
+      	
+      // creamos una nueva celda
+      var newCell = newRow.insertCell(newRow.cells.length);
+      var newCell2 = newRow.insertCell(newRow.cells.length);
 
-		div = document.getElementById('resul');
-		div2 = document.getElementById('formularioEstilo');
-		div3 = document.getElementById('formularioCiudades');
-		div4 = document.getElementById('formularioCercania');
-		
-		$('#formularioEstilo').slideDown('slow', function() {
-  		});
-		
-		div.style.display = "none";
-		div3.style.display = "none";
-		div4.style.display = "none";
+      newCell.className = 'nombres';
+      newCell2.className = 'logo';
+     
+      // y lo asignamos a la celda
+      newCell.innerHTML = landmark;
+      newCell2.innerHTML = "<img src="+cabecera+" height='64' width='64'>"
+      	  
+      newRow.idName=id;
+      newRow.onclick=function(){Cargar_Banda(newRow.idName);}
 
-	}
-
-	function mostrarCiudades() {
-
-		div = document.getElementById('resul');
-		div2 = document.getElementById('formularioEstilo');
-		div3 = document.getElementById('formularioCiudades');
-		div4 = document.getElementById('formularioCercania');
-		
-		$('#formularioCiudades').slideDown('slow', function() {
- 		});
-		
-		div.style.display="none";
-		div2.style.display = "none";
-		div4.style.display = "none";
-
-	}
-		
-	function mostrarCercania() {
-
-		div = document.getElementById('resul');
-		div2 = document.getElementById('formularioEstilo');
-		div3 = document.getElementById('formularioCiudades');
-		div4 = document.getElementById('formularioCercania');
-		
-		$('#formularioCercania').slideDown('slow', function() {
-		});
-		
-		div.style.display="none";
-		div2.style.display = "none";
-		div3.style.display = "none";
-
-	}
+    }
+    
+    
        
     function obtenerDatos() {
         
@@ -123,22 +114,6 @@
         $("body").fadeOut('slow',redirectPage);     
 	}
 	
-	function buscarCiudad(){
-		var tipo="CI";
-        valor=document.getElementById("Ciudad").value;
-        linkLocation = "html/bandas.html?Banda="+valor+"&tipo="+tipo;
-        $("body").fadeOut('slow',redirectPage);     	
-    }
-	
-	function buscarEstilo(){
-		var tipo="ES";
-        valor=document.getElementById("Estilo1").value;
-        estilo2=document.getElementById("Estilo2").value;
-        estilo3=document.getElementById("Estilo3").value;
-        linkLocation = "html/bandas.html?Banda="+valor+"&estilo2="+estilo2+"&estilo3="+estilo3+"&tipo="+tipo;	
-        $("body").fadeOut('slow',redirectPage);     
-    }
-    
     function redirectPage() {
 		window.location = linkLocation;
 	}	

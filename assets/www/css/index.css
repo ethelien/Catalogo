@@ -2,14 +2,14 @@ html{
 	width: 100%;
 	height:100%; /* gives layout 100% height */
 	overflow:inherit; /* triggers 100% height in Opera 9.5 */
-	background: #4c4c4c; /* Old browsers */
-	background: -moz-linear-gradient(top,  #4c4c4c 0%, #666666 10%, #595959 12%, #474747 12%, #2c2c2c 15%, #000000 29%, #111111 73%, #1c1c1c 91%, #2b2b2b 100%, #131313 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(10%,#666666), color-stop(12%,#595959), color-stop(12%,#474747), color-stop(15%,#2c2c2c), color-stop(29%,#000000), color-stop(73%,#111111), color-stop(91%,#1c1c1c), color-stop(100%,#2b2b2b), color-stop(100%,#131313)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #4c4c4c 0%,#666666 10%,#595959 12%,#474747 12%,#2c2c2c 15%,#000000 29%,#111111 73%,#1c1c1c 91%,#2b2b2b 100%,#131313 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #4c4c4c 0%,#666666 10%,#595959 12%,#474747 12%,#2c2c2c 15%,#000000 29%,#111111 73%,#1c1c1c 91%,#2b2b2b 100%,#131313 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #4c4c4c 0%,#666666 10%,#595959 12%,#474747 12%,#2c2c2c 15%,#000000 29%,#111111 73%,#1c1c1c 91%,#2b2b2b 100%,#131313 100%); /* IE10+ */
-	background: linear-gradient(top,  #4c4c4c 0%,#666666 10%,#595959 12%,#474747 12%,#2c2c2c 15%,#000000 29%,#111111 73%,#1c1c1c 91%,#2b2b2b 100%,#131313 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+	background: rgb(179,220,237); /* Old browsers */
+	background: -moz-linear-gradient(left,  rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(179,220,237,1)), color-stop(50%,rgba(41,184,229,1)), color-stop(100%,rgba(188,224,238,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(179,220,237,1) 0%,rgba(41,184,229,1) 50%,rgba(188,224,238,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(179,220,237,1) 0%,rgba(41,184,229,1) 50%,rgba(188,224,238,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(179,220,237,1) 0%,rgba(41,184,229,1) 50%,rgba(188,224,238,1) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(179,220,237,1) 0%,rgba(41,184,229,1) 50%,rgba(188,224,238,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee',GradientType=1 ); /* IE6-9 */
 }
 
 body {
@@ -26,145 +26,127 @@ body {
     width: 100%;
 }
 
-#Busqueda {
-    margin-left: auto;
-    margin-right: auto;
-    table-layout: fixed;
-    width: 100%;
+.maintable{
+    color: #000000;
+    margin-left: 0;
+    width: 100%;	
+    padding-top: 20px;
 }
 
-#Busqueda img {
+.izq{
+	background: rgb(0,183,234); /* Old browsers */
+	background: -moz-linear-gradient(left,  rgba(0,183,234,1) 0%, rgba(0,158,195,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,183,234,1)), color-stop(100%,rgba(0,158,195,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=1 ); /* IE6-9 */
+
+	height:400px;
+}
+
+.der{
+	height:400px;
+	border: 1px solid #FFFFFF;
+	padding-top: 20px;
+}
+
+.img{
+	height:300px;
+}
+
+.text{
+	height:100px;
+}
+
+.valores{
+	width:99%;
+	height:400px;
+	background:none;
+	border:none;
+	overflow:auto;
+}
+
+
+footer {
+    bottom:0; left:0;
+    height:48px;
+    border-top:1px solid #000;
+    
+    background: rgb(79,133,187); /* Old browsers */
+	background: -moz-linear-gradient(left,  rgba(79,133,187,1) 0%, rgba(79,133,187,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(79,133,187,1)), color-stop(100%,rgba(79,133,187,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f85bb', endColorstr='#4f85bb',GradientType=1 ); /* IE6-9 */
+
+    padding:0;
+    position:fixed;
+    z-index:20;
+    font-size:13px;
+    width:100%;
+    text-align:center;
+    color:#f3f3f3;
+    font-weight:bold;
+    text-shadow:0 -1px 0 rgba(0,0,0,0.5);
+    line-height:44px;
+}
+
+button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	padding: 10px 50px;
+	margin-top:3px;
+	background: -moz-linear-gradient(
+		top,
+		#fff3db 0%,
+		#2185ff 0%,
+		#3b94d9 2%,
+		#00d9ff);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#fff3db),
+		color-stop(0.0, #2185ff),
+		color-stop(0.2, #3b94d9),
+		to(#00d9ff));
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
 	border-radius: 6px;
-	background-image:url("../img/spirtebandnessmovil_Busqueda.png");
-	border:1px solid #B0B0B0;
-	width:50px;
-	height:50px;
+	border: 1px solid #001fb8;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px -1px 0px rgba(255,255,255,0.7);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px -1px 0px rgba(255,255,255,0.7);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px -1px 0px rgba(255,255,255,0.7);
+	text-shadow:
+		0px -1px 1px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,0.3);
 }
 
-#Estilos{
-	background-position: -311px -29px;
+.atras{
+	float:left;
+	margin-left:20px;
 }
 
-#Estilos:hover{
-	background-position: -311px -102px;
+.menu{
+	float:center;
 }
 
-#Ciudades{
-	background-position: -389px -29px;
+.adelante{
+	float:right;
+	margin-right:20px;
+}
+h3{
+	color: gray;
+	font-style:italic;
 }
 
-#Ciudades:hover{
-	background-position: -389px -102px;
-}
-
-#Cercania{
-	background-position: -467px -29px;
-}
-
-#Cercania:hover{
-	background-position: -467px -102px;
-}
-
-
-#resul,  #resul2, #formularioEstilo, #formularioCiudades, #formularioCercania {
-	position: absolute;
-	top: 125px;
-    background-color: #E0E0E0;
-    height: 73%;
-    width: 100%;
-}
-
-#eventos {
-    position: absolute;
-    left: 10%;
-    top: 10%;
-    width: 80%;
-    table-layout: fixed;
-}
-
-#eventos td{
-	padding-bottom: 15px;
-	padding-top: 15px;
-}
-
-#tabla {
-    position: absolute;
-    left: 10%;
-    top: 5%;
-    width: 80%;
-    table-layout: fixed;
-}
-
-#tabla td{
-	text-align: left;	
-}
-
-#Estilo1, #Estilo2, #Estilo3, #Ciudad{
-	background-color:#FFFFFF; 
-	border-radius: 5px; 
-	border:1px solid #B0B0B0;
-	color:black;
-    width: 100%;
-}
-
-#Dale_caña{
-	color: white;
-	margin-top: 30px;
-	background-color: #404448;
-	border-radius: 5px;
-    display: block;
-    font-size: large;
-    font-family: Tahoma;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;  
-}
-
-#zona {
-    position: absolute;    
-    bottom: 0;
-    left: 0;
-    height: 60px;
-    width: 100%;
-    z-index: 100;
-}
-
-#zona input {
-	font-size: small;
-    background-color: #404448;
-    border: 2px gray outset;
-    color: white;
-    float: left;
-    width:50%; 
-    height:100%;
-}
-
-
-#Entrada_Bandness{
-    background-image:url("../img/spirtebandnessmovil_40.png");
-	background-repeat: no-repeat;
-	background-position: -30px -250px;
-}
-
-
-h1 {
-    color: white;
-    display: inline-block;
-    font-family: Tahoma;
-    font-size: medium;
-    font-weight: bolder;
-	height:20px;    
-}
-
-h2 {
-    color: white;
-    font-family: Tahoma;
-    font-size: small;
-    font-weight:normal;
-    margin-top:0px;
-}
-
-img{
-	border:2px solid #B0B0B0;
-}
+h4{}
