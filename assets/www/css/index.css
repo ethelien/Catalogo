@@ -46,6 +46,20 @@ body {
 	height:400px;
 }
 
+.valores{
+	margin-left:3px;
+}
+
+#listado{
+	 width: 100%;
+	 border-spacing: 2px 1px;
+}
+
+.filas{
+    background-color: #33FFFF;
+    width: 100%;
+}
+
 .der{
 	height:400px;
 	border: 1px solid #FFFFFF;
@@ -53,11 +67,29 @@ body {
 }
 
 .img{
-	height:300px;
+	height:290px;
+}
+
+.novisible {
+  -moz-transform:scale(1);
+  -webkit-transform:scale(1);
+  -o-transform:scale(1);
+  -ms-transform:scale(1);
+}
+
+.visible {
+  -moz-transform:scale(0);
+  -webkit-transform:scale(0);
+  -o-transform:scale(0);
+  -ms-transform:scale(0);
 }
 
 .text{
-	height:100px;
+	height:30px;
+}
+
+.precio{
+	height:20px;
 }
 
 .valores{

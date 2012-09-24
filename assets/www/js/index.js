@@ -5,12 +5,18 @@
 
 //VARIABLES
  var linkLocation;
- var user_id = localStorage.getItem("user_id");
- var pass = localStorage.getItem("pass");
+ var id;
+ var nombre;
+ var descri;
+ var precio;
+ var imagen;
+ var par=0;
+ //var user_id = localStorage.getItem("user_id");
+ //var pass = localStorage.getItem("pass");
 
  //FUNCIONES   
     $(document).ready(function() {
-        $("body").css("display", "none");
+      //  $("body").css("display", "none");
         
         $("input").click(function() {
         	$("#zona").css("display", "none");
@@ -25,14 +31,14 @@
    
     function onBodyLoad() {   	
 		obtenerDatos();
-		$("body").fadeIn('slow');	
+		//$("body").fadeIn('slow');	
     }
     
     
     function addNewRow()
     {
       // obtenemos acceso a la tabla por su ID
-      var TABLE = document.getElementById("bandas");
+      var TABLE = document.getElementById("listado");
       // obtenemos acceso a la fila maestra por su ID
       var TROW = document.getElementById("fila");
       // tomamos la celda
@@ -42,27 +48,17 @@
       newRow.className = TROW.attributes['class'].value;
       
       if(par=='1'){
-      	newRow.style.background = "#D0D0D0";
+      	newRow.style.background = "#33CCFF";
       	par--;
       }
       
       else
       	par++;
-      	
-      // creamos una nueva celda
-      var newCell = newRow.insertCell(newRow.cells.length);
-      var newCell2 = newRow.insertCell(newRow.cells.length);
-
-      newCell.className = 'nombres';
-      newCell2.className = 'logo';
-     
-      // y lo asignamos a la celda
-      newCell.innerHTML = landmark;
-      newCell2.innerHTML = "<img src="+cabecera+" height='64' width='64'>"
-      	  
+      	     
+      newRow.innerHTML = nombre;      	  
       newRow.idName=id;
-      newRow.onclick=function(){Cargar_Banda(newRow.idName);}
-
+      
+      newRow.onclick=function(){Cargar_valores(newRow.idName);}
     }
     
     
@@ -70,7 +66,7 @@
     function obtenerDatos() {
         
         $.ajax({
-            url: 'http://158.42.77.115/evento_por_fecha.php',
+            url: 'http://localhost/catalogo/catalogo.php',
             dataType: 'jsonp',
             jsonp: 'jsoncallback',
             type:'get',
@@ -78,8 +74,34 @@
             success: function(data/*, status*/){
                 $.each(data, function(i,item){	              	  
               	  	var celda = document.getElementById(i);
-              	  	celda.id=item.id;
-               	    celda.src='http://test.bandness.com/uploads/images/posters/'+item.picture;
+              	  	id = item.id;
+              	  	nombre = '<h4>'+item.nombre+'</h4>';
+              	  	
+              	  	addNewRow();
+                });
+            },
+            error: function(){
+            }
+        });
+    }
+    
+    function Cargar_valores(id_elemento){
+    	
+        $.ajax({
+            url: 'http://localhost/catalogo/atributos.php?busqueda='+id_elemento,
+            dataType: 'jsonp',
+            jsonp: 'jsoncallback',
+            type:'get',
+            timeout: 5000,
+            success: function(data/*, status*/){
+                $.each(data, function(i,item){	     
+                	//document.getElementById('imagen2').className = "visible"
+              	  	document.getElementById('img').innerHTML = "<img id='imagen1' src=./img/"+item.imagen+" height='280' width='280'>"
+              	  	document.getElementById('text').innerHTML = "<h3>"+item.descripcion+"</h3>"
+              	  	document.getElementById('precio').innerHTML = "<h4>"+item.precio+" €"+"</h4>"
+
+              	  	//descri = item.descripcion;
+              	  	//precio = item.precio;
                 });
             },
             error: function(){

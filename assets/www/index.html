@@ -9,9 +9,9 @@
 <script type='text/javascript' src='./js/cordova-1.5.0.js'></script>
 <script src="./js/jquery-1.7.2.min.js"></script>
 <script src="./js/jquery.jsonp-2.2.1.js"></script>
-<script src="./js/menu.js"></script>
+<script src="./js/index.js"></script>
 </head>
-<body>
+<body onload="onBodyLoad()">
 
 		<div id="base">
 		
@@ -19,38 +19,27 @@
 			 	<tbody>
 				 	<tr>
 				 		<td class="izq" width="50%">
-							<div class="valores"">
+							<div class="valores">
 							
-							<h4>Esparragos</h4>
-							<h4>Manzana</h4>
-							<h4>Rollitos</h4>
-							<h4>Sushi</h4>	
-							
-								<h4>Esparragos</h4>
-							<h4>Manzana</h4>
-							<h4>Rollitos</h4>
-							<h4>Sushi</h4>	
-							
-								<h4>Esparragos</h4>
-							<h4>Manzana</h4>
-							<h4>Rollitos</h4>
-							<h4>Sushi</h4>	
-							
-								<h4>Esparragos</h4>
-							<h4>Manzana</h4>
-							<h4>Rollitos</h4>
-							<h4>Sushi</h4>	
+								<TABLE align="center" id="listado">
+					  				<tr class="filas" id="fila">
+								    </tr>
+								</TABLE>						
 							
 							</div>
 				 		
 				 		</td>
 				 		<td class="der" width="50%">
-				 			<div class="img">
-				 				 <img src="./img/esparragos.jpg" alt="Smiley face" height="280" width="280" /> 
+				 			<div class="img" id="img">
+				 				 <img id="imagen1" src="./img/esparragos.jpg" height="280" width="280" /> 
 				 			</div>
 				 			
-				 			<div class="text">
+				 			<div class="text" id="text">
 				 				<h3>Probando voy, probando vengo vengo</h3>
+				 			</div>
+				 			
+				 			<div class="precio" id="precio">
+				 				<h4>Probando voy, probando vengo vengo</h4>
 				 			</div>
 				 		</td>
 				 	</tr>
