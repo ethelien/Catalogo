@@ -18,7 +18,7 @@ body {
     text-align: center;
 }
 
-#base {
+#base, #Adelante {
 	position:absolute;
     left: 0;
     top: 0;
@@ -70,14 +70,30 @@ body {
 	height:290px;
 }
 
+
 .novisible {
+  -moz-transform:scale(0);
+  -webkit-transform:scale(0);
+  -o-transform:scale(0);
+  -ms-transform:scale(0);
+}
+
+.visible {
+  -moz-transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   -moz-transform:scale(1);
   -webkit-transform:scale(1);
   -o-transform:scale(1);
   -ms-transform:scale(1);
 }
 
-.visible {
+.ocultar {
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   -moz-transform:scale(0);
   -webkit-transform:scale(0);
   -o-transform:scale(0);

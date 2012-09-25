@@ -10,6 +10,8 @@
 <script src="./js/jquery-1.7.2.min.js"></script>
 <script src="./js/jquery.jsonp-2.2.1.js"></script>
 <script src="./js/index.js"></script>
+<script src="./js/jquery.scrollTo-1.4.3.1-min.js"></script>
+
 </head>
 <body onload="onBodyLoad()">
 
@@ -31,15 +33,13 @@
 				 		</td>
 				 		<td class="der" width="50%">
 				 			<div class="img" id="img">
-				 				 <img id="imagen1" src="./img/esparragos.jpg" height="280" width="280" /> 
+				 				 <img id="imagen1" height="280" width="280" /> 
 				 			</div>
 				 			
 				 			<div class="text" id="text">
-				 				<h3>Probando voy, probando vengo vengo</h3>
 				 			</div>
 				 			
 				 			<div class="precio" id="precio">
-				 				<h4>Probando voy, probando vengo vengo</h4>
 				 			</div>
 				 		</td>
 				 	</tr>
@@ -49,13 +49,17 @@
 				
 		</div>
 		
+		<div id="Adelante" style="display:none;">
+								PRUEBA
+		</div>
+		
 		<footer>
 		
-			<button class="atras">Atrás</button>
+			<button class="atras" >Atrás</button>
 		
 			<button class="menu">Menú principal</button>
 			
-			<button class="adelante">Adelante</button>
+			<button class="adelante" onclick="Adelante()">Adelante</button>
 		</footer>	
 
 </body>
