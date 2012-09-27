@@ -11,34 +11,57 @@
  var precio;
  var imagen;
  var par=0;
+ var div_siguiente=0;
  
- /*
+ 
  $(document).ready(function() {
-	 $('a.panel').click(function () {
-	 $('a.panel').removeClass('selected');
-	 $(this).addClass('selected');
-	 current = $(this);
-	 $('#wrapper').scrollTo($(this).attr('href'), 800);
-	 return false;
+	 
+	 $('button.adelante').click(function () {
+
+		 div_siguiente++;
+		 
+		 if(div_siguiente<5){
+			 $('#base').scrollTo('#item'+div_siguiente,1000);
+		 	 return false;
+		 }
+		 
+		 else div_siguiente=4;
+		 
 	 });
+	 
+	 $('button.atras').click(function () {
+
+		 div_siguiente--;
+		 if(div_siguiente>=0){
+			 $('#base').scrollTo('#item'+div_siguiente,1000);
+			 return false;
+		 }
+		 
+		 else div_siguiente=0;
+		 
+	 });
+	 
 	 $(window).resize(function () {
-	 resizePanel();
+		resizePanel();
 	 });
+	 
+     document.addEventListener("deviceready", function() {console.log("PhoneGap initialized.")}, false);    
+
 	 });
  
-	 function resizePanel() {
-	 width = $(window).width();
-	 height = $(window).height();
-	 mask_width = width * $('.item').length;
-	 $('#debug').html(width + ' ' + height + ' ' + mask_width);
-	 $('#wrapper, .item').css({width: width, height: height});
-	 $('#mask').css({width: mask_width, height: height});
-	 $('#wrapper').scrollTo($('a.selected').attr('href'), 0);
+ 	function resizePanel() {
+		 width = $(window).width();
+		 height = $(window).height();
+		 mask_width = width * $('.item').length;
+		 $('#debug').html(width + ' ' + height + ' ' + mask_width);
+		 $('#base, .item').css({width: width, height: height});
+		 $('#mask').css({width: mask_width, height: height});
+		 $('#base').scrollTo($('button.atras').attr('#item2'), 0);
 	 } 
 
-	 */
+	 
  //FUNCIONES   
-    $(document).ready(function() {
+   /* $(document).ready(function() {
       //  $("body").css("display", "none");
         
         $("input").click(function() {
@@ -47,10 +70,9 @@
     	
     	$("input").blur(function() {
         	$("#zona").css("display", "inline");
-    	});
+    	});*/
          
-        document.addEventListener("deviceready", function() {console.log("PhoneGap initialized.")}, false);    
-    })
+    //})
    
     function onBodyLoad() {   	
 		obtenerDatos();
@@ -123,7 +145,7 @@
                	
                 	setTimeout(function(){document.getElementById('img').innerHTML = "<img id='imagen1' class='novisible' src=./img/"+item.imagen+" height='280' width='280'>";},500);
               	  	document.getElementById('text').innerHTML = "<h3>"+item.descripcion+"</h3>";
-              	  	document.getElementById('precio').innerHTML = "<h4>"+item.precio+" €"+"</h4>";
+              	  	document.getElementById('precio').innerHTML = "<h4>"+"Precio: "+item.precio+" €"+"</h4>";
 
      	  	
                 	setTimeout(function(){document.getElementById('imagen1').className = 'visible'},600);
@@ -136,36 +158,7 @@
         });
     }
     
-    function Adelante(){
-		div = document.getElementById('base');
-
-		$('#Adelante').slideToggle('80000', function() {
-  		});
-		
-		div.style.display = "none";
-    }
     
-    function continuar(){
-	    event.preventDefault();
-        linkLocation = "html/bandas.html?tipo=ALL";
-        $("body").fadeOut('slow',redirectPage);     
-	}	
-	
-	function zonaprivada(){
-
-		if(user_id!=undefined && pass=='true'){
-			event.preventDefault();
-        	linkLocation = "html/menu.html?User_id="+user_id;
-        	$("body").fadeOut('slow',redirectPage);
-		}
-		
-		else{
-			event.preventDefault();
-        	linkLocation = "html/login.html";
-        	$("body").fadeOut('slow',redirectPage); 
-        }   
-	}
-	
 	function zonaeventos(i){
 		event.preventDefault();
         linkLocation = "html/evento.html?Evento="+i;
