@@ -16,29 +16,72 @@
  
  $(document).ready(function() {
 	 
-	 $('button.adelante').click(function () {
-
-		 div_siguiente++;
-		 
-		 if(div_siguiente<5){
-			 $('#base').scrollTo('#item'+div_siguiente,1000);
-		 	 return false;
-		 }
-		 
-		 else div_siguiente=4;
-		 
-	 });
 	 
 	 $('button.atras').click(function () {
 
 		 div_siguiente--;
 		 if(div_siguiente>=0){
 			 $('#base').scrollTo('#item'+div_siguiente,1000);
-			 return false;
 		 }
 		 
-		 else div_siguiente=0;
+		 if(div_siguiente==0){
+			  document.getElementById('entrantes').style.display="inline";	
+			  document.getElementById('primeros').style.display="inline";	
+			  document.getElementById('segundos').style.display="inline";	
+			  document.getElementById('postres').style.display="inline";	
+				 
+			  document.getElementById('atras').style.display="none";			 
+			  document.getElementById('adelante').style.display="none";
+			  document.getElementById('menu').style.display="none";
+		 }
 		 
+		 if(div_siguiente<0)
+			 div_siguiente=0;
+	 });
+	 
+	 $('button.menu').click(function () {
+
+		 div_siguiente=0;
+		 $('#base').scrollTo('#item0',1000);
+		 
+		  document.getElementById('entrantes').style.display="inline";	
+		  document.getElementById('primeros').style.display="inline";	
+		  document.getElementById('segundos').style.display="inline";	
+		  document.getElementById('postres').style.display="inline";	
+			 
+		  document.getElementById('atras').style.display="none";			 
+		  document.getElementById('adelante').style.display="none";
+		  document.getElementById('menu').style.display="none";
+		 
+	 });
+	 
+	 $('button.adelante').click(function () {
+
+		 div_siguiente++;
+		 
+		 
+		 if(div_siguiente<5){
+			 $('#base').scrollTo('#item'+div_siguiente,1000);
+		 }
+		 
+		 else div_siguiente=4;
+		 
+	 });
+		 
+	  $('button.menu_botones').click(function () {
+
+		  document.getElementById('entrantes').style.display="none";	
+		  document.getElementById('primeros').style.display="none";	
+		  document.getElementById('segundos').style.display="none";	
+		  document.getElementById('postres').style.display="none";	
+			 
+		  document.getElementById('atras').style.display="inline";			 
+		  document.getElementById('adelante').style.display="inline";
+		  document.getElementById('menu').style.display="inline";
+			 
+		  $('#base').scrollTo('#item'+$(this).attr('value'), 800); 		  
+		  div_siguiente=$(this).attr('value');
+				 		 
 	 });
 	 
 	 $(window).resize(function () {
@@ -75,7 +118,7 @@
     //})
    
     function onBodyLoad() {   	
-		obtenerDatos();
+		//obtenerDatos();
 		//$("body").fadeIn('slow');	
     }
     
