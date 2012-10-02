@@ -101,10 +101,10 @@
 
      
       // y lo asignamos a la celda
-      newCell.innerHTML = "<input name='nombre' type='text'  value="+nombre+">";
-      newCell2.innerHTML = "<textarea name='descripcion' cols='40' type='text' value="+descri+"";
-      newCell3.innerHTML = "<input name='precio' type='text' value="+precio+">";
-      newCell4.innerHTML = "<input name='imagen' type='text' value="+imagen+">";
+      newCell.innerHTML = "<input id=nombre"+id+" name='nombre' type='text'  value="+nombre+">";
+      newCell2.innerHTML = "<textarea id=descripcion"+id+" name='descripcion' cols='40' type='text' value="+descri+"";
+      newCell3.innerHTML = "<input id=precio"+id+" name='precio' type='text' value="+precio+">";
+      newCell4.innerHTML = "<input id=imagen"+id+" name='imagen' type='text' value="+imagen+">";
       newCell5.innerHTML = "<input type='button' value='Modificar' onclick='Modificar("+id+")'/>";
       newCell6.innerHTML = "<input type='button' value='Borrar' onclick='Borrar("+id+")'/>";
 
@@ -153,8 +153,15 @@
       //newRow.onclick=function(){Cargar_valores(newRow.idName);}
     }
     
-    function Modificar(id){
-    	alert(id);
+    
+    function Modificar(id,nombre,descri,precio,imagen){
+    	$id=id;
+    	$nombre=document.getElementById('nombre'+id).value;
+    	$descripcion=document.getElementById('descripcion'+id).value;
+    	$precio=document.getElementById('precio'+id).value;
+    	$imagen=document.getElementById('imagen'+id).value;
+    	
+    	modificarDatos();
     }
     
     function Borrar(id){
@@ -168,11 +175,6 @@
     	$precio=document.getElementById('precio').value;
     	$imagen=document.getElementById('imagen').value;
 
-    	alert($nombre);
-    	alert($descripcion);
-    	alert($precio);
-    	alert($imagen);
-    	
     	guardarDatos();
     }
     
@@ -186,8 +188,7 @@
             type:'get',
             timeout: 5000,
             success: function(data/*, status*/){
-            	alert("OK");
-            },
+                window.location.reload()            },
             error: function(){
             }
         });
@@ -202,8 +203,22 @@
             type:'get',
             timeout: 5000,
             success: function(data/*, status*/){
-            	alert("OK");
-            },
+                window.location.reload()            },
+            error: function(){
+            }
+        });
+    }
+    
+    function modificarDatos() {
+    	
+        $.ajax({
+            url: 'http://localhost/catalogo/tablas.php?tipo=3&id='+$id+"&nombre="+$nombre+"&descripcion="+$descripcion+"&precio="+$precio+"&imagen="+$imagen,
+            dataType: 'jsonp',
+            jsonp: 'jsoncallback',
+            type:'get',
+            timeout: 5000,
+            success: function(data/*, status*/){
+                window.location.reload()            },
             error: function(){
             }
         });
