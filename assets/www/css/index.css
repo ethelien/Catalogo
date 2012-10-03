@@ -2,14 +2,14 @@ html{
 	width: 100%;
 	height:100%; /* gives layout 100% height */
 	overflow:inherit; /* triggers 100% height in Opera 9.5 */
-	background: rgb(179,220,237); /* Old browsers */
-	background: -moz-linear-gradient(left,  rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(179,220,237,1)), color-stop(50%,rgba(41,184,229,1)), color-stop(100%,rgba(188,224,238,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  rgba(179,220,237,1) 0%,rgba(41,184,229,1) 50%,rgba(188,224,238,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  rgba(179,220,237,1) 0%,rgba(41,184,229,1) 50%,rgba(188,224,238,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  rgba(179,220,237,1) 0%,rgba(41,184,229,1) 50%,rgba(188,224,238,1) 100%); /* IE10+ */
-	background: linear-gradient(to right,  rgba(179,220,237,1) 0%,rgba(41,184,229,1) 50%,rgba(188,224,238,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee',GradientType=1 ); /* IE6-9 */
+	background: rgb(246,230,180); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(246,230,180,1) 0%, rgba(237,144,23,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(246,230,180,1)), color-stop(100%,rgba(237,144,23,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  rgba(246,230,180,1) 0%,rgba(237,144,23,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  rgba(246,230,180,1) 0%,rgba(237,144,23,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  rgba(246,230,180,1) 0%,rgba(237,144,23,1) 100%); /* IE10+ */
+	background: linear-gradient(135deg,  rgba(246,230,180,1) 0%,rgba(237,144,23,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6e6b4', endColorstr='#ed9017',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 body {
@@ -39,6 +39,10 @@ body {
 	width:20%;
 	height:100%;
 	float:left;
+	/*background: url("../img/fondo.jpg");   
+	background-size:1500px 1500px;  
+	background-position:center; 
+	background-repeat:no-repeat;*/
 }
 
 .maintable{
@@ -47,18 +51,10 @@ body {
     width: 100%;	
     padding-top: 20px;
     position:relative;
+    filter:none;
 }
 
 .izq{
-	background: rgb(0,183,234); /* Old browsers */
-	background: -moz-linear-gradient(left,  rgba(0,183,234,1) 0%, rgba(0,158,195,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,183,234,1)), color-stop(100%,rgba(0,158,195,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* IE10+ */
-	background: linear-gradient(to right,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=1 ); /* IE6-9 */
-
 	height:400px;
 }
 
@@ -66,19 +62,19 @@ body {
 	margin-left:3px;
 }
 
-#listado{
+.listado{
 	 width: 100%;
-	 border-spacing: 2px 1px;
+	 border-spacing: 2px 1px;	
 }
 
 .filas{
-    background-color: #33FFFF;
+    background-color: #EAC26C;
     width: 100%;
 }
 
 .der{
 	height:400px;
-	border: 1px solid #FFFFFF;
+	border: 1px solid #C08308;
 	padding-top: 20px;
 }
 
@@ -138,14 +134,14 @@ footer {
     height:48px;
     border-top:1px solid #000;
     
-    background: rgb(79,133,187); /* Old browsers */
-	background: -moz-linear-gradient(left,  rgba(79,133,187,1) 0%, rgba(79,133,187,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(79,133,187,1)), color-stop(100%,rgba(79,133,187,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* IE10+ */
-	background: linear-gradient(to right,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f85bb', endColorstr='#4f85bb',GradientType=1 ); /* IE6-9 */
+    background: rgb(241,231,103); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(241,231,103,1)), color-stop(100%,rgba(254,182,69,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  rgba(241,231,103,1) 0%,rgba(254,182,69,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  rgba(241,231,103,1) 0%,rgba(254,182,69,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  rgba(241,231,103,1) 0%,rgba(254,182,69,1) 100%); /* IE10+ */
+	background: linear-gradient(135deg,  rgba(241,231,103,1) 0%,rgba(254,182,69,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
     padding:0;
     position:fixed;
@@ -167,20 +163,18 @@ button {
 	margin-top:3px;
 	background: -moz-linear-gradient(
 		top,
-		#fff3db 0%,
-		#2185ff 0%,
-		#3b94d9 2%,
-		#00d9ff);
+		#fff6db 0%,
+		#ffc821 25%,
+		#ff9900);
 	background: -webkit-gradient(
 		linear, left top, left bottom, 
-		from(#fff3db),
-		color-stop(0.0, #2185ff),
-		color-stop(0.2, #3b94d9),
-		to(#00d9ff));
+		from(#fff6db),
+		color-stop(0.25, #ffc821),
+		to(#ff9900));
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
-	border: 1px solid #001fb8;
+	border: 1px solid #b85f00;
 	-moz-box-shadow:
 		0px 1px 3px rgba(000,000,000,0.5),
 		inset 0px -1px 0px rgba(255,255,255,0.7);
@@ -194,6 +188,7 @@ button {
 		0px -1px 1px rgba(000,000,000,0.2),
 		0px 1px 0px rgba(255,255,255,0.3);
 }
+
 
 .atras{
 	float:left;
