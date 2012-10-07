@@ -12,7 +12,8 @@
  var imagen;
  var par=0;
  var div_siguiente=0;
- var tabla="listado0";
+ var tabla=0;
+ var variable;
  
  
  $(document).ready(function() {
@@ -100,22 +101,27 @@
 		 $('#debug').html(width + ' ' + height + ' ' + mask_width);
 		 $('#base, .item').css({width: width, height: height});
 		 $('#mask').css({width: mask_width, height: height});
-		 $('#base').scrollTo($('button.atras').attr('.item'), 0);
+		 $('#base').scrollTo($('button.atras').attr('#item2'), 0);
 		 // ALGO RARO AQUI
 	 } 
-
 	 
    
     function onBodyLoad(){   	
-    	obtenerDatos();		
+
+        $(".listado").each(function (i){
+			tabla=i+1;
+
+	    alert(tabla);
+    	obtenerDatos(tabla);		
 		
-		//$("body").fadeIn('slow');	
+		//$("body").fadeIn('slow');
+        });
+
     }
     
     function addNewRow()
     {
-      alert(tabla);
-      var TABLE = document.getElementById(tabla);
+      var TABLE = document.getElementById("listado"+variable);
       var TROW = document.getElementById("fila");
       var content = TROW.getElementsByTagName("td");
       var newRow = TABLE.insertRow(-1);
@@ -130,7 +136,7 @@
       	par++;
       	     
       newRow.innerHTML = nombre;     
-      newRow.value = tabla;
+      newRow.value = variable;
       newRow.idName=id;
       
       newRow.onclick=function(){Cargar_valores(newRow.idName,newRow.value);}
@@ -138,14 +144,12 @@
     
     
        
-    function obtenerDatos() {
-        alert(tabla);
-        
-        $(".listado").each(function (i){
-			tabla="listado"+i;
+    function obtenerDatos(tabla) {
 
+        variable=tabla;
+        
 	        $.ajax({
-	            url: 'http://localhost/catalogo/catalogo.php?tipo='+tabla,
+	            url: 'http://localhost/catalogo/catalogo.php?tipo=listado'+tabla,
 	            dataType: 'jsonp',
 	            jsonp: 'jsoncallback',
 	            type:'get',
@@ -163,32 +167,31 @@
 	            }
 	        });
 	        
-        });
     }
     
     function Cargar_valores(id_elemento,tabla){
-        alert(tabla);
-        alert(id_elemento);
+
         $.ajax({
-            url: 'http://localhost/catalogo/atributos.php?tipo='+tabla+"&busqueda="+id_elemento,
+            url: 'http://localhost/catalogo/atributos.php?tipo=listado'+tabla+"&busqueda="+id_elemento,
             dataType: 'jsonp',
             jsonp: 'jsoncallback',
             type:'get',
             timeout: 5000,
             success: function(data/*, status*/){
-                $.each(data, function(i,item){	     
-                	//document.getElementById('imagen2').className = "visible"
-                	//document.getElementById('imagen1').className = "visible"
-                	document.getElementById('imagen1').className = 'ocultar';
+                $.each(data, function(i,item){
+                	prueba="imagen"+tabla;
+                	img="img"+tabla;
+                	text="text"+tabla;
+                	precio="precio"+tabla;
+                	alert(prueba);
+                	document.getElementById(prueba).className = 'ocultar';
                	
-                	setTimeout(function(){document.getElementById('img').innerHTML = "<img id='imagen1' class='novisible' src=./img/"+item.imagen+" height='280' width='280'>";},500);
-              	  	document.getElementById('text').innerHTML = "<h3>"+item.descripcion+"</h3>";
-              	  	document.getElementById('precio').innerHTML = "<h4>"+"Precio: "+item.precio+" €"+"</h4>";
+                	setTimeout(function(){document.getElementById(img).innerHTML = "<img id='imagen"+tabla+"'class='novisible' src=./img/listado"+tabla+"/"+item.imagen+" height='280' width='280'>";},500);
+              	  	document.getElementById(text).innerHTML = "<h3>"+item.descripcion+"</h3>";
+              	  	document.getElementById(precio).innerHTML = "<h4>"+"Precio: "+item.precio+" €"+"</h4>";
 
      	  	
-                	setTimeout(function(){document.getElementById('imagen1').className = 'visible'},600);
-              	  	//descri = item.descripcion;
-              	  	//precio = item.precio;
+                	setTimeout(function(){document.getElementById(prueba).className = 'visible'},600);
                 });
             },
             error: function(){
